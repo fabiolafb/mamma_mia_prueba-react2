@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { PizzeriaProvider } from "./ContextPizzeria";
 
-function App() {
+// components
+import Navbar from "./components/Navbar";
+
+// views
+import Home from "./views/Home";
+import Carrito from "./views/Carrito";
+import NotFound from "./views/NotFound";
+import DescripcionPizza from "./views/DescripcionPizza";
+import Footer from "./components/Footer";
+
+export default function App() {
+ 
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PizzeriaProvider >
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/pizza/:id" element={<DescripcionPizza />} />
+            <Route path="/carrito" element={<Carrito />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </PizzeriaProvider>
     </div>
   );
-}
-
-export default App;
+};

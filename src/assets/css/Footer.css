@@ -1,0 +1,26 @@
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: #38b6be;
+    color:aliceblue;
+    line-height: 1.5rem;
+    margin-top: 1.5rem;
+    align-items: center;
+    align-content: center;
+    position: sticky;
+    align-self: flex-end;
+}
+.parr_edit {
+    text-align: center;
+    margin-right: 1rem;
+}
+
+.logo_rrss {
+    width: 1.5rem;
+    filter: invert();
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+}
