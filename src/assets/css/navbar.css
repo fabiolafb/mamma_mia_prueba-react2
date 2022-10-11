@@ -47,13 +47,12 @@ a {
   width: 2.6rem;
   filter: invert();
   position: relative;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
 }
-p {
-  margin-right: 0;
-}
+
 .precio-total {
   margin-right: 1rem;
+  margin-left: 0.5rem;
 }
 
 .badge-rounded-circle{

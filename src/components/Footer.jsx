@@ -6,6 +6,7 @@ import facebook from "../assets/img/facebook.png";
 const Footer = () => {
   return (
     <footer>
+      <div className="div_footer">
       <h4 class="parr_edit">Síguenos en nuestras redes sociales </h4>
       <div class="i-rrss">
         <img
@@ -24,6 +25,7 @@ const Footer = () => {
           data-placement="top"
           title="Facebook Mamma Mía"
         />
+      </div>
       </div>
     </footer>
   );
