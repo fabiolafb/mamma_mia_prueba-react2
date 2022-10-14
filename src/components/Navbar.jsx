@@ -1,5 +1,5 @@
 import ContextPizzeria from "../ContextPizzeria";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Navbar, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../assets/img/logo.png";
@@ -9,11 +9,12 @@ import "../assets/css/navbar.css";
 export default function Navigation() {
   //const setActiveClass = ({ isActive }) => (isActive ? "active" : "inactive");
   const { sumarCarrito } = useContext(ContextPizzeria);
-
   const total = sumarCarrito.reduce(
-    (valorAnterior, { count, price }) => (valorAnterior + price) * count,
+    (valorAnterior, { count, price }) => (valorAnterior + price * count),
     0
   );
+   
+
 
   return (
     <>
@@ -34,7 +35,6 @@ export default function Navigation() {
           </div>
 
           <div className="div_carrito  ms-5">
-
             {/* Corregir que sume todo el circulo rojo */}
             <Link to="/carrito" className="" id="carrito">
               <img src={carrito} alt="" className="logo_carrito" />

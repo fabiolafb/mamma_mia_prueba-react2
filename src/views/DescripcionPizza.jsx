@@ -49,28 +49,6 @@ export default function Descripcion() {
                     currency: "CLP",
                   })}
                 </h1>
-                {/* {sumarCarrito.map((pe, i) => (
-                <div className="precio-btns-masmenos-desc">
-                  <button
-                    className="btn-btn-danger-desc"
-                    onClick={() => quitar(i)}
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title="Quitar una pizza"
-                  >
-                    -
-                  </button>
-                  <h4 className="mx-2-desc">{pe.count}</h4>
-                  <button
-                    className="btn-btn-primary-desc"
-                    onClick={() => agregar(i)}
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title="Agregar una pizza"
-                  >
-                    +
-                  </button>
-                </div>))} */}
                 <button
                   onClick={() => agregarCarrito(pizzaId)}
                   className="btn-agregar-2"

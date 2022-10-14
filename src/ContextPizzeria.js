@@ -8,6 +8,7 @@ const PizzeriaProvider = ({ children }) => {
   const [sumarCarrito, setSumarCarrito] = useState([]);
 
   const url = "/pizzas.json";
+
   //Función que llama a la API
   const obtenerPizzas = async () => {
     const res = await fetch(url);
@@ -33,7 +34,7 @@ const PizzeriaProvider = ({ children }) => {
     }
   };
 
-   //Función agregar o quitar pizzas
+  //Función agregar o quitar pizzas
   const agregar = (i) => {
     sumarCarrito[i].count++;
     setSumarCarrito([...sumarCarrito]);
@@ -49,9 +50,21 @@ const PizzeriaProvider = ({ children }) => {
     setSumarCarrito([...sumarCarrito]);
   };
 
-  
+  //Función vaciar carrito
+  const vaciarCarrito = () => setSumarCarrito([]);
+
   return (
-    <ContextPizzeria.Provider value={{ pizzas, sumarCarrito, setSumarCarrito, agregarCarrito, agregar, quitar }}>
+    <ContextPizzeria.Provider
+      value={{
+        pizzas,
+        sumarCarrito,
+        setSumarCarrito,
+        agregarCarrito,
+        agregar,
+        quitar,
+        vaciarCarrito,
+      }}
+    >
       {children}
     </ContextPizzeria.Provider>
   );

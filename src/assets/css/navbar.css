@@ -60,13 +60,14 @@ a {
   top: 1;
   font-size: 0.9rem;
   background: red;
-  width: 14px;
+  color: white;
+   width: 14px;
   height: 14px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  
   padding: 2.5px;
   margin-left: 1.5rem;
   margin-bottom: 0.8rem;
