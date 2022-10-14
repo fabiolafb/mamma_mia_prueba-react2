@@ -1,11 +1,8 @@
 import CardCatalogo from "../components/CardCatalogo";
 import imghome from "../assets/img/img_home.jpg";
 import "../assets/css/home.css";
-//import { useContext } from "react";
-//import ContextPizzeria from "../ContextPizzeria"; 
 
 export default function Home() {
-
 
   return (
     <div>

@@ -9,12 +9,12 @@ import "../assets/css/navbar.css";
 export default function Navigation() {
   //const setActiveClass = ({ isActive }) => (isActive ? "active" : "inactive");
   const { sumarCarrito } = useContext(ContextPizzeria);
+
   const total = sumarCarrito.reduce(
-    (valorAnterior, { count, price }) => (valorAnterior + price * count),
+    (valorAnterior, { count, price }) => valorAnterior + price * count,
     0
   );
-   
-
+  let sum = 0;
 
   return (
     <>
@@ -37,19 +37,31 @@ export default function Navigation() {
           <div className="div_carrito  ms-5">
             {/* Corregir que sume todo el circulo rojo */}
             <Link to="/carrito" className="" id="carrito">
-              <img src={carrito} alt="" className="logo_carrito" />
+              <img
+                src={carrito}
+                alt=""
+                className="logo_carrito"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Ir a carrito"
+              />
               {sumarCarrito.map((pe, i) => (
                 <span
                   id="cart_menu_num"
                   data-action="cart-can"
                   className="badge-rounded-circle"
                 >
-                  {pe.count}
+                  {(sum = sum + pe.count)}
                 </span>
               ))}
             </Link>
             <Link to="/carrito">
-              <h4 className="precio-total">
+              <h4
+                className="precio-total"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Ir a carrito"
+              >
                 {total.toLocaleString("es-CL", {
                   style: "currency",
                   currency: "CLP",

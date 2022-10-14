@@ -59,6 +59,9 @@ export default function CardCatalogo() {
                 to={`/pizza/${pizza.id}`}
                 className="btn-ver"
                 onClick={() => navigate(`/pizza/${pizza.id}`)}
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Ver detalle de pizza"
               >
                 Ver más 👀
               </button>
@@ -66,6 +69,9 @@ export default function CardCatalogo() {
               <button
                 className="btn-agregar"
                 onClick={() => agregarCarrito(pizza)}
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Añadir pizza al carrito"
               >
                 Añadir <img src={carrito} alt="" className="logo_carrito2" />
               </button>

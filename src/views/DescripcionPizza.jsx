@@ -1,6 +1,6 @@
 import ContextPizzeria from "../ContextPizzeria";
 import { useContext } from "react";
-import { Link, useParams } from "react-router-dom"; //estado que recibe el valor sleccionado (id)
+import { Link, useParams } from "react-router-dom"; //params estado que recibe el valor sleccionado (id)
 import "../assets/css/descripcionPizza.css";
 import carrito from "../assets/img/carrito.png";
 import cerrar from "../assets/img/cerrar.png";
@@ -8,17 +8,12 @@ import { Card } from "react-bootstrap";
 
 export default function Descripcion() {
   //const [selectPizza, setSelectPizza] = useState({});
-  const { pizzas, agregarCarrito, sumarCarrito, agregar, quitar } =
+  const { pizzas, agregarCarrito } =
     useContext(ContextPizzeria);
   const { id } = useParams();
 
   const pizzaId = pizzas.find((pizza) => pizza.id === id);
   console.log(pizzaId);
-
-  const total = sumarCarrito.reduce(
-    (valorAnterior, { count, price }) => (valorAnterior + price) * count,
-    0
-  );
 
   return (
     <>
@@ -41,6 +36,7 @@ export default function Descripcion() {
                   <li key={i}>🍕 {i[0].toUpperCase() + i.substring(1)} </li>
                 ))}
               </ul>
+
               <div className="d-flex">
                 <h1 className="">
                   Precio{" "}
@@ -49,9 +45,18 @@ export default function Descripcion() {
                     currency: "CLP",
                   })}
                 </h1>
+                <Link to="/carrito" ><button className="hover-1"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Ir a carrito"
+                >Ir a carrito</button></Link>
+                
                 <button
                   onClick={() => agregarCarrito(pizzaId)}
                   className="btn-agregar-2"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Añadir pizza al carrito"
                 >
                   Añadir <img src={carrito} alt="" className="logo_carrito" />
                 </button>
@@ -60,7 +65,6 @@ export default function Descripcion() {
             <Link to="/">
               <img
                 src={cerrar}
-                
                 alt=""
                 className="cerrar"
                 data-toggle="tooltip"

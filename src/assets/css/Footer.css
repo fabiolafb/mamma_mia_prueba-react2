@@ -1,12 +1,11 @@
 footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
     background: #38b6be;
     color:aliceblue;
-    margin-top: auto;
-    /* position: sticky; */
+    
+    /* margin-top: auto; */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 .div_footer {
     display: flex;

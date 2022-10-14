@@ -13,11 +13,11 @@ a {
   align-content: space-between;
   align-items: center;
   justify-content: space-between;
-  margin: 0 7rem 0 7rem;
+  margin: 0 8rem 0 8rem;
   font-size: 1.2rem;
 }
 .menu_principal {
-  width: 20rem;
+  width: 22rem;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -27,7 +27,7 @@ a {
   padding-right: 1rem;
 }
 .text-dark {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 .text-light {
   margin-left: 1.3rem;
